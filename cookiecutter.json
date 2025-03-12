@@ -1,9 +1,10 @@
 {
-    "project_name": "Meu Projeto Django",
-    "project_slug": "{{ cookiecutter.project_name|lower|replace(' ', '_') }}",
-    "author": "Seu Nome",
-    "email": "seuemail@example.com",
-    "description": "Template para projetos Django",
-    "django_version": "4.2",
-    "use_docker": ["yes", "no"]
+  "project_name": "Meu Projeto Django",
+  "project_slug": "{{ cookiecutter.project_name|lower|replace(' ', '_') }}",
+  "username": "admin",
+  "author": "",
+  "email": "",
+  "description": "Template para projetos Django",
+  "django_version": "4.2",
+  "use_docker": ["yes", "no"]
 }
