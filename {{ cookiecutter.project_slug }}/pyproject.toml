@@ -1,0 +1,54 @@
+[project]
+name = "template-de-projeto"
+version = "0.0.1"
+dependencies = [
+    "celery==5.3.1",
+    "Django==5.1",
+    "django-celery-beat==2.7.0",
+    "django-celery-results==2.5.1",
+    "django-cors-headers==4.2.0",
+    "django-environ==0.10.0",
+    "djangorestframework==3.14.0",
+    "djangorestframework-simplejwt==5.2.2",
+    "drf-nested-routers==0.93.4",
+    "drf-spectacular==0.26.3",
+    "drf-spectacular-sidecar==2023.7.1",
+    "drf-rw-serializers==1.4.0",
+    "Faker==19.2.0",
+    "Pillow==10.0.0",
+    "psycopg2-binary==2.9.6",
+    "redis==5.0.0",
+]
+
+[tool.setuptools]
+packages = []
+
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit==3.3.3",
+    "poethepoet==0.29.0",
+]
+
+[tool.poe.tasks]
+migrate = "docker-compose exec api python manage.py migrate"
+makemigrations = "docker-compose exec api python manage.py makemigrations"
+shell = "docker-compose exec api python manage.py shell"
+
+
+[tool.pylint.MESSAGE_CONTROL]
+disable = """
+    line-too-long,
+    abstract-method,
+    no-member,
+"""
+enable = "useless-suppression"
+
+[tool.pylint.REPORTS]
+reports="no"
+
+[tool.pylint.FORMAT]
+max-line-length="88"
+
+[tool.pylint.BASIC]
+good-names = "_,i,e,setUp,tearDown,maxDiff"
