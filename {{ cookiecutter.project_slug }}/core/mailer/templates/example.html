@@ -7,7 +7,7 @@
     <title>Exemplo de E-mail</title>
   </head>
   <body>
-    <h1>Olá {{ username }}!</h1>
+    <h1>Olá {{ cookiecutter.username | default("usuário") }}!</h1>
     <p>Este é um exemplo de e-mail usando variáveis do contexto.</p>
     <p>Aqui está um exemplo de como você pode usar as variáveis:</p>
     <ul>
